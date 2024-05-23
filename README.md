@@ -8,7 +8,7 @@ Certainly, here's a brief example introduction for a political candidate:
 
 ---
 
-## About [Candidate Name]
+## About Monwabisi Xhegwana
 
 Monwabisi is a dedicated public servant with a passion for development. With a background in Public Relations, Monwabisi brings a wealth of knowledge and a fresh perspective to the political arena.
 
