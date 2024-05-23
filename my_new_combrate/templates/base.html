@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Monwabisi Xegwana{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1>Monwabisi Xegwana</h1>
+        <p>Vote for a Better Tomorrow</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="{% url 'my_new_combrate:home' %}">Home</a></li>
+            <li><a href="{% url 'my_new_combrate:about' %}">About</a></li>
+            <li><a href="{% url 'my_new_combrate:contact' %}">Contact</a></li>
+            <li><a href="{% url 'login' %}">Login</a></li>
+            <li><a href="{% url 'my_new_combrate:signup' %}">Sign Up</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        {% block content %}
+        <h2>Welcome to Monwabisi Xegwana's Campaign Website</h2>
+        <p>Learn about Monwabisi's vision for our city and how you can get involved in creating positive change.</p>
+        {% endblock %}
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Monwabisi Xegwana for Mayor Campaign</p>
+    </footer>
+</body>
+</html>

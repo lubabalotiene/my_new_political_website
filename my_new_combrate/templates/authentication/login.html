@@ -1,0 +1,12 @@
+<!-- templates/login.html -->
+
+{% extends 'base.html' %}
+{% block title %} Login {% endblock %}
+
+{% block content %}
+    <h2>Login</h2>
+    {% if login_button %}
+        <a href="{{ login_button.url }}" class="btn btn-primary">{{ login_button.button_text }}</a>
+    {% endif %}
+    <p>Don't have an account? <a href="{% url 'my_new_combrate:register' %}">Register here</a>.</p>
+{% endblock %}
