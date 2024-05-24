@@ -66,12 +66,12 @@ Follow these instructions to set up and run the website on your local machine an
 ## Stopping the Docker Container
 
    1. List running containers:
-      '''bash
+      '''bash:
       docker ps
 
    2. Stop the container:
-      '''bash
-      docker stop container_id
+      '''bash:
+      docker stop QJI56F
 
 ## Contributing
 If you'd like to contribute to this project, please fork the repository and submit a pull request.
