@@ -21,66 +21,57 @@ As a candidate, Monwabisi is committed to working tirelessly to enact positive c
 
 ## Getting Started
 
-Follow these instructions to set up and run the website on your local machine.
+Follow these instructions to set up and run the website on your local machine and to include step-by-step instructions for building and running the Docker image.
 
-### Prerequisites
 
-- Python 3.10
-- Docker (optional)
+1. Section for Docker:
 
-### Installation
+   ## Docker Instructions
 
-1. Clone the repository:
+   ### Prerequisites
 
+   - [Docker](https://docs.docker.com/get-docker/) installed on your machine.
+
+   ### Building the Docker Image
+
+   1.1 **Clone the repository**:
    ```bash
-   git clone <repository_url>
-   cd <project_directory>
+   git clone https://github.com/lubabalotiene/my_new_political_website.git
+   cd my_new_political_website
 
 
-## Getting Started
-To set up and run the political website on your local machine, follow these steps:
+2. Build the Docker image:
+   '''bash
+   docker build -t my_new_political_website
 
-### Prerequisites
-Before getting started, ensure you have the following installed on your system:
+## Running the Docker Container
 
-Python 3.10
-Pip (Python package manager)
-Git (optional, for cloning the repository)
-Docker (optional, for running the website in a containerized environment)
+1. Run the Docker container:
+   '''bash
+   docker run -d -p 8000:8000 my_new_political_website
 
-## Installation
+2. Access the application:
+   Open your web browser and navigate to http://localhost:8000.
 
-Clone the Repository:If you haven't already, clone the repository to your local machine. You can do this by running the following command in your terminal or command prompt:
-bash:
-Copy code:
-git clone <https://github.com/lubabalotiene/my_new_political_website.gi>
+## Building and Running for Development
 
-Navigate to the Project Directory:Once the repository is cloned, navigate to the project directory using the cd command:
-bash:
-Copy code:
-cd my_new_political_website/my_new_combrate
+   1. Build the Docker image for development:
+      '''bash
+      docker build -f Dockerfile.dev -t my_new_political_website.
 
-Set Up Virtual Environment:It's recommended to create a virtual environment to isolate the project dependencies. Run the following commands to create and activate a virtual environment:
-bash:
-Copy code:
-python -m venv venv
-source venv/bin/activate   # On Windows, use 'venv\Scripts\activate'
+   2. Run the Docker container for development:
+      '''bash
+      docker run -v $(pwd):/app --env-file .env -d -p 8000:8000 my_new_political_website
 
-Install Dependencies:With the virtual environment activated, install the required dependencies using pip:
-bash
-Copy code
-pip install -r requirements.txt
-## Running the Website and ## Running with venv
-Migrate the Database:Before running the website, apply migrations to set up the database schema. Run the following command:
-bash:
-Copy code:
-python manage.py migrate
+## Stopping the Docker Container
 
-Start the Development Server:Once the migrations are applied, start the development server by running:
-bash:
-Copy code:
-python manage.py runserver
-This will start the server locally, and you can access the website by navigating to http://127.0.0.1:8000 in your web browser.
+   1. List running containers:
+      '''bash
+      docker ps
+
+   2. Stop the container:
+      '''bash
+      docker stop container_id
 
 ## Contributing
 If you'd like to contribute to this project, please fork the repository and submit a pull request.

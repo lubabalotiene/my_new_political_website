@@ -1,16 +1,10 @@
 import os
 import sys
-sys.path.insert(0, os.path.abspath('..'))  # Adjust the path if necessary
+import django
 
-# Add any Sphinx extension module names here, as strings.
-extensions = [
-    'sphinx.ext.autodoc',
-    'sphinx.ext.viewcode',
-    'sphinx.ext.napoleon',  # For Google and NumPy style docstrings
-]
-
-# The master toctree document.
-master_doc = 'index'
+sys.path.insert(0, os.path.abspath('../..'))
+os.environ['DJANGO_SETTINGS_MODULE'] = 'my_new_political_website.settings'
+django.setup()
 
 
 # Configuration file for the Sphinx documentation builder.
@@ -21,10 +15,10 @@ master_doc = 'index'
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'My Django Project'
-copyright = '2024, Lubabalo'
-author = 'Lubabalo'
-release = '15'
+project = 'My New Political Website'
+copyright = '2024, Lubabalo Gqesha'
+author = 'Lubabalo Gqesha'
+release = '16'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -32,7 +26,7 @@ release = '15'
 extensions = []
 
 templates_path = ['_templates']
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+exclude_patterns = []
 
 
 
@@ -43,9 +37,12 @@ html_theme = 'alabaster'
 html_static_path = ['_static']
 
 
-import os
-import sys
-import django
-sys.path.insert(0, os.path.abspath('..'))
-os.environ['DJANGO_SETTINGS_MODULE'] = 'My Django Project.settings'
-django.setup()
+# Add any Sphinx extension module names here, as strings.
+extensions = [
+    'sphinx.ext.autodoc',
+    'sphinx.ext.viewcode',
+    'sphinx.ext.napoleon',
+]
+
+# The master toctree document.
+master_doc = 'index'
