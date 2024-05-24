@@ -2,26 +2,44 @@
 
 Welcome to Monwabisi Xhegwana's Political Website! This website serves as a platform for Monwabisi Xhegwana's political campaign, providing information about their candidacy, policies, and ways to get involved.
 
-## About
+## Django Capstone Project
+Table of Contents
+   Introduction   
+   Requirements   
+   Setup
+      Virtual Environment
+      Docker
+Database Migration
+Running the Server
+Contributing
+License
 
-Certainly, here's a brief example introduction for a political candidate:
+## Introduction
+This is a Django project developed for the capstone project. This guide will help you set up and run the project using a virtual environment and Docker.
 
----
+## Requirements
+Python 3.9+
+Django 5.0.4
+Docker
+Docker Compose (optional)
 
-## About Monwabisi Xhegwana
+## Setup
+   Virtual Environment
 
-Monwabisi is a dedicated public servant with a passion for development. With a background in Public Relations, Monwabisi brings a wealth of knowledge and a fresh perspective to the political arena.
+1. Clone the repository:
+   git clone https://github.com/lubabalotiene/my_new_political_website.git
+   cd my_new_political_website
 
-Throughout his career, Monwabisi has championed a lot aimed at improving the community, addressing key local challenges. He firmly believes in core values, and his unwavering commitment to community development drives his candidacy.
+2. Create a virtual environment:
+   python3 -m venv venv
+   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
 
-Monwabisi is deeply invested in fostering inclusive and sustainable. Communities where every voice is heard and every individual can thrive. He understand the complexities of local and national issues and is dedicated to finding pragmatic solutions that benefit all members of society.
+3. Install dependencies:
+   pip install --upgrade pip
+   pip install -r requirements.txt
 
-As a candidate, Monwabisi is committed to working tirelessly to enact positive change and build a brighter future for His constituents. With a focus on transparency and accountability, he strive to be an accessible and effective representative for the people.
 
-
-## Getting Started
-
-Follow these instructions to set up and run the website on your local machine and to include step-by-step instructions for building and running the Docker image.
+## Getting Started  - Docker
 
 
 1. Section for Docker:
@@ -62,6 +80,25 @@ Follow these instructions to set up and run the website on your local machine an
    2. Run the Docker container for development:
       '''bash
       docker run -v $(pwd):/app --env-file .env -d -p 8000:8000 my_new_political_website
+
+## Database Migration
+   1.  Apply migrations:
+      python manage.py makemigrations
+      python manage.py migrate
+      
+## If you are using Docker, you can run these commands inside the Docker container:
+   1. Start an interactive shell in the container:
+      docker run -it myapp /bin/sh
+
+   2. Apply migrations:
+      python manage.py makemigrations
+      python manage.py migrate
+
+## Running the Server
+   Virtual Environment:
+
+   1.  To run the server locally using a virtual environment, execute:
+      python manage.py runserver
 
 ## Stopping the Docker Container
 
