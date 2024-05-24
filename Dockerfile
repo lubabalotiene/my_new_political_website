@@ -18,7 +18,7 @@ COPY . /code/
 COPY ./requirements.txt /code/requirements.txt
 
 # Install any needed dependencies specified in requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
+RUN /bin/sh -c pip install --no-cache-dir -r requirements.txt
 
 # Run Django application
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
